@@ -1,0 +1,31 @@
+<h1>Bike: <%=@bikes.bike_type %> </h1>
+    <p>
+      <strong>Bike Type:</strong>
+      <%= @bike.bike_type %>
+      <br>
+      <strong>Bike Size:</strong>
+      <%= @bike.bike_size %>
+      <br>
+      <strong>Pedal Type:</strong>
+      <%= @bike.pedal_type %>
+      <br>
+    </p>
+    <hr />
+
+
+<% if @bike.reservations.any? %>
+    <h5> Renter </h5>
+    <ul>
+        <% @bike.reservations.each do |reservation| %>
+          <li>
+            <%= reservation.renter.name %>
+            <%= link_to 'Remove', reservation_path(reservation), method: :delete, data: {confirm: 'Really remove this bike?'} %>
+          </li>
+        <% end %>
+    </ul>
+<% else %>
+  <h5>No Renters</h5>
+<% end %>
+
+<%= link_to 'All Bikes', bikes_path %> |
+<%= link_to 'Edit', edit_renter_path(@renter) %>

@@ -1,0 +1,6 @@
+<h1>Reservations Index</h1>
+<% @reservations.each do |reservation| %>
+  <h2><%= reservation.name %></h2>
+  <h2><%= reservation.bike %></h2>
+  <%= link_to 'Show Reservation', reservation_path(reservation) %>
+  <%end%>
