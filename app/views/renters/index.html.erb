@@ -12,7 +12,7 @@
 <tbody>
   <% @renters.each do |renter| %>
     <tr>
-      <td><%= renter.name %></td>
+      <td><%= current_renter.name %></td>
 
       <td><%= link_to 'Show', renter %></td>
       <td><%= link_to 'Edit', edit_renter_path(renter) %></td>

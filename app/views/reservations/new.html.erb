@@ -5,9 +5,7 @@
   <%= f.select :renter_id, options_for_select(@renters) %>
   <%= f.select :bike_id, options_for_select(@bikes) %>
 
-
   <%= f.submit nil, class: 'btn' %>
-<% end %>
 
 <hr />
 <%= link_to 'All Renters', renters_path %>

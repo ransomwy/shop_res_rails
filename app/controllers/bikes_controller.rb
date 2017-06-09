@@ -14,6 +14,7 @@ class BikesController < ApplicationController
   end
 
   def edit
+    
   end
 
   def create
@@ -42,7 +43,7 @@ class BikesController < ApplicationController
   private
 
   def set_bike
-    @bikes = Bike.find(params[:id])
+    @bike = Bike.find(params[:id])
   end
 
   def bike_params

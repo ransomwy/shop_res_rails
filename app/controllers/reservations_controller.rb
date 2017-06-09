@@ -3,7 +3,15 @@ class ReservationsController < ApplicationController
 
   def new
     @renters = Renter.all.map{ |r| [r.name, r.id] }
-    @bikes = Bike.all.map{ |b| [b.bike_type, b.id] }
+    # @all_bikes = Bike.all
+    # @bikes = []
+    # @all_bikes.each do |bike|
+    #   if bike.is_available == true
+    #     @bikes << bike
+    #   end
+    # end
+    # binding.pry
+    @bikes = Bike.all.map{ |b| [b.bike_type, b.id, b.is_available] }
     @reservation = Reservation.new
   end
 
